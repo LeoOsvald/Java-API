@@ -11,9 +11,5 @@ public interface IngressoRepository extends JpaRepository<Ingresso, Long> {
     
     Optional<Ingresso> findById(Long id);
     
-    List<Ingresso> findByPedidoId(Long pedidoId);
-    
-    Optional<Ingresso> findByCodigoQr(String codigoQr);
-    
     void deleteById(Long id);
 }

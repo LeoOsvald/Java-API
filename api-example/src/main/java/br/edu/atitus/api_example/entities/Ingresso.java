@@ -8,13 +8,22 @@ public class Ingresso {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "tipo_ingresso_id", nullable = false)
-    private TipoIngressoEntity tipo;
+    private String tipo;
+
+    private Double valor;
+
 
     @ManyToOne
-    @JoinColumn(name = "pedido_id")
-    private PedidoEntity pedido;
+    @JoinColumn(name = "evento_id")
+    private EventoEntity evento;
+
+    public EventoEntity getEvento() {
+        return evento;
+    }
+
+    public void setEvento(EventoEntity evento) {
+        this.evento = evento;
+    }
 
     public Long getId() {
         return id;
@@ -24,31 +33,22 @@ public class Ingresso {
         this.id = id;
     }
 
-    public TipoIngressoEntity getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoIngressoEntity tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public PedidoEntity getPedido() {
-        return pedido;
+    public double getValor() {
+        return valor;
     }
 
-    public void setPedido(PedidoEntity pedido) {
-        this.pedido = pedido;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
-    public String getCodigoQr() {
-        return codigoQr;
-    }
 
-    public void setCodigoQr(String codigoQr) {
-        this.codigoQr = codigoQr;
-    }
 
-    private String codigoQr; // string gerada (UUID, base64, etc)
-
-    // getters e setters
 }

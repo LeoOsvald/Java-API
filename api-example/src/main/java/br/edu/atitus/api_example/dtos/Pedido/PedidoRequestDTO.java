@@ -4,19 +4,19 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+import br.edu.atitus.api_example.entities.Ingresso;
+
 public class PedidoRequestDTO {
     private UUID compradorId;
     private LocalDateTime dataCompra;
-    private Double total;
     private List<Long> ingressosIds;
 
     public PedidoRequestDTO() {
     }
 
-    public PedidoRequestDTO(UUID compradorId, LocalDateTime dataCompra, Double total, List<Long> ingressosIds) {
+    public PedidoRequestDTO(UUID compradorId, LocalDateTime dataCompra,List<Long> ingressosIds) {
         this.compradorId = compradorId;
         this.dataCompra = dataCompra;
-        this.total = total;
         this.ingressosIds = ingressosIds;
     }
 
@@ -34,14 +34,6 @@ public class PedidoRequestDTO {
 
     public void setDataCompra(LocalDateTime dataCompra) {
         this.dataCompra = dataCompra;
-    }
-
-    public Double getTotal() {
-        return total;
-    }
-
-    public void setTotal(Double total) {
-        this.total = total;
     }
 
     public List<Long> getIngressosIds() {

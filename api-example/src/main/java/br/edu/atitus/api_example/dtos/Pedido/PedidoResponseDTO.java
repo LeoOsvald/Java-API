@@ -8,17 +8,15 @@ public class PedidoResponseDTO {
     private UUID compradorId;
     private String compradorNome;
     private LocalDateTime dataCompra;
-    private Double total;
 
     public PedidoResponseDTO() {
     }
 
-    public PedidoResponseDTO(Long id, UUID compradorId, String compradorNome, LocalDateTime dataCompra, Double total) {
+    public PedidoResponseDTO(Long id, UUID compradorId, String compradorNome, LocalDateTime dataCompra) {
         this.id = id;
         this.compradorId = compradorId;
         this.compradorNome = compradorNome;
         this.dataCompra = dataCompra;
-        this.total = total;
     }
 
     public Long getId() {
@@ -51,13 +49,5 @@ public class PedidoResponseDTO {
 
     public void setDataCompra(LocalDateTime dataCompra) {
         this.dataCompra = dataCompra;
-    }
-
-    public Double getTotal() {
-        return total;
-    }
-
-    public void setTotal(Double total) {
-        this.total = total;
     }
 }

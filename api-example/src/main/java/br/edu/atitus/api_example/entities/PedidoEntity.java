@@ -2,12 +2,14 @@ package br.edu.atitus.api_example.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "pedidos")
 public class PedidoEntity {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -17,8 +19,18 @@ public class PedidoEntity {
     private LocalDateTime dataCompra;
     private Double total;
 
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
-    private List<Ingresso> ingressos;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "pedido_id") 
+    private List<Ingresso> ingressos = new ArrayList<>();
+
+    // Método auxiliar para adicionar ingressos
+    public void adicionarIngresso(Ingresso ingresso) {
+        this.ingressos.add(ingresso);
+    }
+
+    public void adicionarIngressos(List<Ingresso> novosIngressos) {
+        this.ingressos.addAll(novosIngressos);
+    }
 
     //#region Getters e setters
     public Long getId() {
@@ -46,9 +58,14 @@ public class PedidoEntity {
     }
 
     public Double getTotal() {
-        return total;
+        if (ingressos== null || ingressos.isEmpty()) {
+            return 0.0;
+        }
+        
+        return ingressos.stream()
+                .mapToDouble(Ingresso::getValor)
+                .sum();
     }
-
     public void setTotal(Double total) {
         this.total = total;
     }
@@ -61,5 +78,4 @@ public class PedidoEntity {
         this.ingressos = ingressos;
     }
     //#endregion
-
 }

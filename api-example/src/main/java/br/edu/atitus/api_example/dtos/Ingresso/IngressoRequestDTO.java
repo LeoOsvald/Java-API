@@ -1,40 +1,40 @@
 package br.edu.atitus.api_example.dtos.Ingresso;
 
+import br.edu.atitus.api_example.entities.TipoIngressoEnum;
+
 public class IngressoRequestDTO {
-    private Long tipoIngressoId;
-    private Long pedidoId;
-    private String codigoQr;
+    private TipoIngressoEnum tipoIngresso;
+    private Double valor;
+    private Long eventoId;
 
-    public IngressoRequestDTO() {
+
+    public IngressoRequestDTO(TipoIngressoEnum tipoIngresso, Double valor,Long eventoId) {
+        this.tipoIngresso = tipoIngresso;
+        this.valor = valor;
+        this.eventoId = eventoId;
     }
 
-    public IngressoRequestDTO(Long tipoIngressoId, Long pedidoId, String codigoQr) {
-        this.tipoIngressoId = tipoIngressoId;
-        this.pedidoId = pedidoId;
-        this.codigoQr = codigoQr;
+    public String getTipoIngresso() {
+        return tipoIngresso.toString();
     }
 
-    public Long getTipoIngressoId() {
-        return tipoIngressoId;
+    public void setTipoIngresso(TipoIngressoEnum tipoIngresso) {
+        this.tipoIngresso = tipoIngresso;
     }
 
-    public void setTipoIngressoId(Long tipoIngressoId) {
-        this.tipoIngressoId = tipoIngressoId;
+    public Double getValor() {
+        return this.valor;
     }
 
-    public Long getPedidoId() {
-        return pedidoId;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
-    public void setPedidoId(Long pedidoId) {
-        this.pedidoId = pedidoId;
+    public Long getEventoId() {
+        return eventoId;
     }
 
-    public String getCodigoQr() {
-        return codigoQr;
-    }
-
-    public void setCodigoQr(String codigoQr) {
-        this.codigoQr = codigoQr;
+    public void setEventoId(Long eventoId) {
+        this.eventoId = eventoId;
     }
 }

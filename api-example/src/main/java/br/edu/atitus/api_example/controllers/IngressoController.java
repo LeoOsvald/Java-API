@@ -42,24 +42,9 @@ public class IngressoController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/qr/{codigoQr}")
-    public ResponseEntity<IngressoResponseDTO> buscarPorCodigoQr(@PathVariable String codigoQr) {
-
-        var result = service.buscarPorCodigoQr(codigoQr);
-        if (result == null) 
-            return ResponseEntity.notFound().build();
-    
-        return ResponseEntity.ok(result);
-    }
-
     @GetMapping
     public ResponseEntity<List<IngressoResponseDTO>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
-    }
-
-    @GetMapping("/pedido/{pedidoId}")
-    public ResponseEntity<List<IngressoResponseDTO>> listarPorPedido(@PathVariable Long pedidoId) {
-        return ResponseEntity.ok(service.listarPorPedido(pedidoId));
     }
 
     @DeleteMapping("/{id}")

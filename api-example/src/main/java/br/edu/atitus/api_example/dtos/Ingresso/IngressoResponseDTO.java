@@ -2,20 +2,34 @@ package br.edu.atitus.api_example.dtos.Ingresso;
 
 public class IngressoResponseDTO {
     private Long id;
-    private Long tipoIngressoId;
     private String tipoIngressoNome;
-    private Long pedidoId;
-    private String codigoQr;
+    private Double valor;
+    private Long eventoId;
+
+    public void setTipoIngressoNome(String tipoIngressoNome) {
+        this.tipoIngressoNome = tipoIngressoNome;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public Long getEventoId() {
+        return eventoId;
+    }
+
+    public void setEventoId(Long eventoId) {
+        this.eventoId = eventoId;
+    }
 
     public IngressoResponseDTO() {
     }
 
-    public IngressoResponseDTO(Long id, Long tipoIngressoId, String tipoIngressoNome, Long pedidoId, String codigoQr) {
+    public IngressoResponseDTO(Long id,String tipoIngressoNome, double valor,Long eventoId) {
         this.id = id;
-        this.tipoIngressoId = tipoIngressoId;
         this.tipoIngressoNome = tipoIngressoNome;
-        this.pedidoId = pedidoId;
-        this.codigoQr = codigoQr;
+        this.valor = valor;
+        this.eventoId = eventoId;
     }
 
     public Long getId() {
@@ -26,35 +40,15 @@ public class IngressoResponseDTO {
         this.id = id;
     }
 
-    public Long getTipoIngressoId() {
-        return tipoIngressoId;
-    }
-
-    public void setTipoIngressoId(Long tipoIngressoId) {
-        this.tipoIngressoId = tipoIngressoId;
-    }
-
     public String getTipoIngressoNome() {
-        return tipoIngressoNome;
+        return tipoIngressoNome.toString();
     }
 
-    public void setTipoIngressoNome(String tipoIngressoNome) {
-        this.tipoIngressoNome = tipoIngressoNome;
+    public double getValor() {
+        return valor;
     }
 
-    public Long getPedidoId() {
-        return pedidoId;
-    }
-
-    public void setPedidoId(Long pedidoId) {
-        this.pedidoId = pedidoId;
-    }
-
-    public String getCodigoQr() {
-        return codigoQr;
-    }
-
-    public void setCodigoQr(String codigoQr) {
-        this.codigoQr = codigoQr;
+    public void setCodigoQr(double valor) {
+        this.valor = valor;
     }
 }

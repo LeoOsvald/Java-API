@@ -15,9 +15,6 @@ public interface IngressoService {
 
     IngressoResponseDTO buscarPorId(Long id);
 
-    IngressoResponseDTO buscarPorCodigoQr(String codigoQr);
 
     List<IngressoResponseDTO> listarTodos();
-    
-    List<IngressoResponseDTO> listarPorPedido(Long pedidoId);
 }

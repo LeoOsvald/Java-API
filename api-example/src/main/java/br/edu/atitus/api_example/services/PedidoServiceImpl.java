@@ -35,7 +35,6 @@ public class PedidoServiceImpl implements PedidoService {
         
         entity.setComprador(comprador);
         entity.setDataCompra(dto.getDataCompra());
-        entity.setTotal(dto.getTotal());
 
         PedidoEntity salvo = repository.save(entity);
 
@@ -43,8 +42,7 @@ public class PedidoServiceImpl implements PedidoService {
                 salvo.getId(),
                 salvo.getComprador().getId(),
                 salvo.getComprador().getName(),
-                salvo.getDataCompra(),
-                salvo.getTotal()
+                salvo.getDataCompra()
         );
     }
 
@@ -59,7 +57,6 @@ public class PedidoServiceImpl implements PedidoService {
 
         existente.setComprador(comprador);
         existente.setDataCompra(dto.getDataCompra());
-        existente.setTotal(dto.getTotal());
 
         PedidoEntity atualizado = repository.save(existente);
 
@@ -67,8 +64,7 @@ public class PedidoServiceImpl implements PedidoService {
                 atualizado.getId(),
                 atualizado.getComprador().getId(),
                 atualizado.getComprador().getName(),
-                atualizado.getDataCompra(),
-                atualizado.getTotal()
+                atualizado.getDataCompra()
         );
     }
 
@@ -90,8 +86,7 @@ public class PedidoServiceImpl implements PedidoService {
                 encontrado.getId(),
                 encontrado.getComprador().getId(),
                 encontrado.getComprador().getName(),
-                encontrado.getDataCompra(),
-                encontrado.getTotal()
+                encontrado.getDataCompra()
         );
     }
 
@@ -103,8 +98,7 @@ public class PedidoServiceImpl implements PedidoService {
                         p.getId(),
                         p.getComprador().getId(),
                         p.getComprador().getName(),
-                        p.getDataCompra(),
-                        p.getTotal()
+                        p.getDataCompra()
                 ))
                 .collect(Collectors.toList());
     }
@@ -117,8 +111,7 @@ public class PedidoServiceImpl implements PedidoService {
                         p.getId(),
                         p.getComprador().getId(),
                         p.getComprador().getName(),
-                        p.getDataCompra(),
-                        p.getTotal()
+                        p.getDataCompra()
                 ))
                 .collect(Collectors.toList());
     }
