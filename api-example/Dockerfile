@@ -26,4 +26,4 @@ EXPOSE 8080
 # Copia o JAR gerado da fase de build
 COPY --from=build /app/target/api-example-0.0.1-SNAPSHOT.jar app.jar
 
-# Comando para rodar a aplicação
+# Comando para rodar a aplicação   a
