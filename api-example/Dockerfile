@@ -1,29 +1,11 @@
-# --- STAGE 1: BUILD ---
-# Utiliza a imagem oficial do Maven com JDK 17 para compilar o projeto
 FROM maven:3.8.6-jdk-17 AS build
 WORKDIR /app
-
-# Copia o arquivo pom.xml para baixar as dependências
 COPY pom.xml .
-
-# Baixa as dependências (para aproveitar o cache do Docker)
-RUN mvn dependency:go-offline
-
-# Copia o código-fonte
 COPY src ./src
-
-# Compila o projeto e gera o JAR executável
 RUN mvn clean package -DskipTests
 
-# --- STAGE 2: RUNTIME ---
-# Utiliza uma imagem JRE leve para a execução final
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-
-# Expõe a porta padrão do Spring Boot
 EXPOSE 8080
-
-# Copia o JAR gerado da fase de build
 COPY --from=build /app/target/api-example-0.0.1-SNAPSHOT.jar app.jar
-
-# Comando para rodar a aplicação   a
+ENTRYPOINT ["java", "-jar", "app.jar"]
