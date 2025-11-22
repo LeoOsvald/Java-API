@@ -18,8 +18,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "usuarios")
-public class UsuarioEntity implements UserDetails{
+@Table(name = "tb_user")
+public class UserEntity implements UserDetails{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.UUID)
@@ -36,7 +36,7 @@ public class UsuarioEntity implements UserDetails{
 	private String password;
 	
 	@Enumerated(EnumType.ORDINAL)
-	private TypeUserEntity type;
+	private TypeUser type;
 
 	public UUID getId() {
 		return id;
@@ -70,11 +70,11 @@ public class UsuarioEntity implements UserDetails{
 		this.password = password;
 	}
 
-	public TypeUserEntity getType() {
+	public TypeUser getType() {
 		return type;
 	}
 
-	public void setType(TypeUserEntity type) {
+	public void setType(TypeUser type) {
 		this.type = type;
 	}
 

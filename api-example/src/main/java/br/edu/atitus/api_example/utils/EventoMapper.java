@@ -11,9 +11,9 @@ public class EventoMapper {
 
     public EventoEntity toEntity(EventoRequestDTO dto) {
         EventoEntity e = new EventoEntity();
-        e.setTitulo(dto.titulo());
-        e.setDescricao(dto.descricao());
-        e.setData(dto.data());
+        e.setTitulo(dto.getTitulo());
+        e.setDescricao(dto.getDescricao());
+        e.setData(dto.getData());
         return e;
     }
 
@@ -27,8 +27,8 @@ public class EventoMapper {
     }
 
     public void updateEntity(EventoRequestDTO dto, EventoEntity e) {
-        e.setTitulo(dto.titulo());
-        e.setDescricao(dto.descricao());
-        e.setData(dto.data());
+        e.setTitulo(dto.getTitulo());
+        e.setDescricao(dto.getDescricao());
+        e.setData(dto.getData());
     }
 }

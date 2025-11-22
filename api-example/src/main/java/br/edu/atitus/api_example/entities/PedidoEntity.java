@@ -12,7 +12,7 @@ public class PedidoEntity {
 
     @ManyToOne
     @JoinColumn(name = "comprador_id", nullable = false)
-    private UsuarioEntity comprador;
+    private UserEntity comprador;
 
     private LocalDateTime dataCompra;
     private Double total;
@@ -29,11 +29,11 @@ public class PedidoEntity {
         this.id = id;
     }
 
-    public UsuarioEntity getComprador() {
+    public UserEntity getComprador() {
         return comprador;
     }
 
-    public void setComprador(UsuarioEntity comprador) {
+    public void setComprador(UserEntity comprador) {
         this.comprador = comprador;
     }
 

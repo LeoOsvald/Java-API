@@ -43,7 +43,7 @@ public class EventoController {
     }
 
 
-    @GetMapping("/{titulo}")
+    @GetMapping("/getByTitulo/{titulo}")
     public ResponseEntity<EventoResponseDTO> buscarPorTitulo(@PathVariable String titulo) {
 
         var result = service.buscarPorTitulo(titulo);

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.atitus.api_example.dtos.SigninDTO;
 import br.edu.atitus.api_example.dtos.SignupDTO;
-import br.edu.atitus.api_example.entities.TypeUserEntity;
-import br.edu.atitus.api_example.entities.UsuarioEntity;
+import br.edu.atitus.api_example.entities.TypeUser;
+import br.edu.atitus.api_example.entities.UserEntity;
 import br.edu.atitus.api_example.services.UserService;
 
 @RestController
@@ -32,11 +32,11 @@ public class AuthController {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<UsuarioEntity> postSignup(
+	public ResponseEntity<UserEntity> postSignup(
 			@RequestBody SignupDTO dto) throws Exception{
-		UsuarioEntity user = new UsuarioEntity();
+		UserEntity user = new UserEntity();
 		BeanUtils.copyProperties(dto, user);
-		user.setType(TypeUserEntity.Common);
+		user.setType(TypeUser.Common);
 		
 		service.save(user);
 
@@ -47,7 +47,7 @@ public class AuthController {
 	public ResponseEntity<String> postSignin(
 			@RequestBody SigninDTO dto) throws AuthenticationException, Exception{
 		authConfig.getAuthenticationManager().authenticate(
-				new UsernamePasswordAuthenticationToken(dto.getNome(), dto.getSenha()));
+				new UsernamePasswordAuthenticationToken(dto.email(), dto.password()));
 		return ResponseEntity.ok("JWT");
 	}
 	
@@ -58,6 +58,3 @@ public class AuthController {
 	}
 
 }
-
-
-

@@ -5,9 +5,9 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.edu.atitus.api_example.entities.UsuarioEntity;
+import br.edu.atitus.api_example.entities.UserEntity;
 
-public interface UserRepository extends JpaRepository<UsuarioEntity, UUID>{
+public interface UserRepository extends JpaRepository<UserEntity, UUID>{
 	
 	//select * from tb_user where email = {}
 	boolean existsByEmail(String email);
@@ -15,6 +15,6 @@ public interface UserRepository extends JpaRepository<UsuarioEntity, UUID>{
 	//select * from tb_user where email = {} and name = {}
 	boolean existsByEmailAndName(String email, String name);
 	
-	Optional<UsuarioEntity> findByEmail(String email);
+	Optional<UserEntity> findByEmail(String email);
 
 }

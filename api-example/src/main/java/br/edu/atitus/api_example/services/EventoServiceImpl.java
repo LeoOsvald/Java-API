@@ -24,9 +24,9 @@ public class EventoServiceImpl implements EventoService {
     @Override
     public EventoResponseDTO criar(EventoRequestDTO dto) {
         EventoEntity entity = new EventoEntity();
-        entity.setTitulo(dto.titulo());
-        entity.setDescricao(dto.descricao());
-        entity.setData(dto.data());
+        entity.setTitulo(dto.getTitulo());
+        entity.setDescricao(dto.getDescricao());
+        entity.setData(dto.getData());
 
         EventoEntity salvo = repository.save(entity);
 
@@ -44,9 +44,9 @@ public class EventoServiceImpl implements EventoService {
         EventoEntity existente = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Evento não encontrado"));
 
-        existente.setTitulo(dto.titulo());
-        existente.setDescricao(dto.descricao());
-        existente.setData(dto.data());
+        existente.setTitulo(dto.getTitulo());
+        existente.setDescricao(dto.getDescricao());
+        existente.setData(dto.getData());
 
         EventoEntity atualizado = repository.save(existente);
 
