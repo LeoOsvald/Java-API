@@ -97,7 +97,7 @@ A seguir, a documentação detalhada dos principais *endpoints* da API:
 **Exemplo de Requisição: Cadastro de Usuário (`/auth/signup`)**
 
 ```bash
-curl --location 'http://localhost:8080/auth/signup' \
+curl --location 'https://philosophical-martguerita-aaaaaasdasdas-da4b9204.koyeb.app/auth/signup' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "name": "Valdomiro Geremias Pinto da Silva",
@@ -109,7 +109,7 @@ curl --location 'http://localhost:8080/auth/signup' \
 **Exemplo de Requisição: Login de Usuário (`/auth/signin`)**
 
 ```bash
-curl --location 'http://localhost:8080/auth/signin' \
+curl --location 'https://philosophical-martguerita-aaaaaasdasdas-da4b9204.koyeb.app/auth/signin' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "email": "pintodasilva@gmail.com",
@@ -133,7 +133,7 @@ curl --location 'http://localhost:8080/auth/signin' \
 **Exemplo de Requisição: Criação de Evento (`/eventos`)**
 
 ```bash
-curl --location 'http://localhost:8080/eventos' \
+curl --location 'https://philosophical-martguerita-aaaaaasdasdas-da4b9204.koyeb.app/eventos' \
 --header 'Authorization: Bearer <TOKEN_JWT>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -156,7 +156,7 @@ curl --location 'http://localhost:8080/eventos' \
 **Exemplo de Requisição: Criação de Ingresso (`/ingressos`)**
 
 ```bash
-curl --location 'http://localhost:8080/ingressos' \
+curl --location 'https://philosophical-martguerita-aaaaaasdasdas-da4b9204.koyeb.app/ingressos' \
 --header 'Authorization: Bearer <TOKEN_JWT>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -181,7 +181,7 @@ curl --location 'http://localhost:8080/ingressos' \
 **Exemplo de Requisição: Criação de Pedido (`/pedidos`)**
 
 ```bash
-curl --location 'http://localhost:8080/pedidos' \
+curl --location 'https://philosophical-martguerita-aaaaaasdasdas-da4b9204.koyeb.app/pedidos' \
 --header 'Authorization: Bearer <TOKEN_JWT>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -205,4 +205,4 @@ curl --location 'http://localhost:8080/pedidos' \
 
 ## 9. Link da API em Produção (nuvem)
 
-**[LINK DA API DEPLOYADA (KOYEB OU SIMILAR)]**
+**[https://philosophical-martguerita-aaaaaasdasdas-da4b9204.koyeb.app/swagger-ui/index.html#/]**
