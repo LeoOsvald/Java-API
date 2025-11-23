@@ -17,7 +17,7 @@
 
 | Nome Completo | RA (Registro Acadêmico) | E-mail Institucional |
 | :--- | :--- | :--- |
-| [GABRIEL ANDRIOLLI] | [1136706] | [1136706@ATITUS.EDU.BR] |
+LEONARDO DE SOUZA
 
 
 ## 4. Explicação do Tema do Aplicativo
